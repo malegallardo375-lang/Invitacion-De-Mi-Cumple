@@ -101,3 +101,54 @@ button:active{
     color:#666;
     font-weight:bold;
 }
+
+
+.gracias{
+    animation: aparecer .6s ease;
+    text-align:center;
+    padding:20px;
+}
+
+.gracias h2{
+    color:#d97d9b;
+    margin-top:15px;
+    font-size:30px;
+}
+
+.gracias p{
+    color:#666;
+    margin-top:15px;
+    line-height:1.6;
+    font-size:18px;
+}
+
+.texto{
+    margin-top:25px;
+}
+
+.emoji{
+    font-size:55px;
+}
+
+.corazon{
+    margin-top:25px;
+    font-size:40px;
+    animation: latido 1s infinite;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes latido{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}

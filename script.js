@@ -10,7 +10,7 @@ formulario.addEventListener("submit", async (e) => {
     try {
         await fetch(URL, {
             method: "POST",
-            mode: "no-cors",   // 👈 ESTA ES LA CLAVE
+            mode: "no-cors",
             headers: {
                 "Content-Type": "text/plain;charset=utf-8"
             },
@@ -19,13 +19,26 @@ formulario.addEventListener("submit", async (e) => {
             })
         });
 
-        document.getElementById("mensaje").innerHTML =
-            `¡Gracias ${nombre}! 💗 Tu asistencia fue confirmada.`;
+        document.querySelector(".formulario").innerHTML = `
+            <div class="gracias">
+                <div class="emoji">🐰💖</div>
 
-        formulario.reset();
+                <h2>¡Gracias por confirmar!</h2>
+
+                <p>
+                    <strong>${nombre}</strong>, tu asistencia quedó registrada.
+                </p>
+
+                <p class="texto">
+                    ¡Los esperamos el <b>25 de julio</b><br>
+                    para celebrar los <b>2 añitos de Amparo</b> 🎉
+                </p>
+
+                <div class="corazon">💕</div>
+            </div>
+        `;
 
     } catch (error) {
-        console.error(error);
         alert("No se pudo enviar la confirmación.");
     }
 });
