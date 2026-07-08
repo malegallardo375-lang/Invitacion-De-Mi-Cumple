@@ -35,7 +35,6 @@ caja.innerHTML = `
     <div class="emoji">🐰💖</div>
 
     <h2> <strong>${nombre}</strong>, <br>¡Gracias por confirmar tu asistencia!.</h2>
-    ¡Gracias por confirmar!
     <p class="texto">
         ¡Te espero el <b>25 de julio</b><br>
         para celebrar mis <b>2 añitos!</b> 🎉
