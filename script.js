@@ -1,4 +1,5 @@
 const formulario = document.getElementById("formulario");
+const boton = formulario.querySelector("button");
 
 const URL = "https://script.google.com/macros/s/AKfycbwsHxWN4WUKu32LeTV08t2ohHbc0AeB2eLceVUqGl0U21US2ovTxDvbGK2Tr723oZ1mvw/exec";
 
@@ -6,6 +7,10 @@ formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const nombre = document.getElementById("nombre").value;
+
+    // Deshabilitar el botón apenas lo tocan
+    boton.disabled = true;
+    boton.textContent = "Enviando...";
 
     try {
         await fetch(URL, {
@@ -18,6 +23,8 @@ formulario.addEventListener("submit", async (e) => {
                 nombre: nombre
             })
         });
+        alert("Llegué hasta acá");
+
 
         document.querySelector(".formulario").innerHTML = `
             <div class="gracias">
@@ -25,13 +32,10 @@ formulario.addEventListener("submit", async (e) => {
 
                 <h2>¡Gracias por confirmar!</h2>
 
-                <p>
-                    <strong>${nombre}</strong>, tu asistencia quedó registrada.
-                </p>
+                <p><strong>${nombre}</strong>, tu asistencia quedó registrada.</p>
 
                 <p class="texto">
-                    ¡Los esperamos el <b>25 de julio</b><br>
-                    para celebrar los <b>2 añitos de Amparo</b> 🎉
+                    ¡Te esperamos para celebrar los 2 añitos de Amparo! 🎉
                 </p>
 
                 <div class="corazon">💕</div>
@@ -39,6 +43,9 @@ formulario.addEventListener("submit", async (e) => {
         `;
 
     } catch (error) {
-        alert("No se pudo enviar la confirmación.");
+        boton.disabled = false;
+        boton.textContent = "Confirmar";
+
+        alert("No se pudo enviar la confirmación. Intentá nuevamente.");
     }
 });
