@@ -13,34 +13,41 @@ formulario.addEventListener("submit", async (e) => {
     boton.textContent = "Enviando...";
 
     try {
-        await fetch(URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-                "Content-Type": "text/plain;charset=utf-8"
-            },
-            body: JSON.stringify({
-                nombre: nombre
-            })
-        });
-        alert("Llegué hasta acá");
+       await fetch(URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify({
+        nombre: nombre
+    })
+});
 
 
-        document.querySelector(".formulario").innerHTML = `
-            <div class="gracias">
-                <div class="emoji">🐰💖</div>
+        
 
-                <h2>¡Gracias por confirmar!</h2>
 
-                <p><strong>${nombre}</strong>, tu asistencia quedó registrada.</p>
+const caja = document.querySelector(".formulario");
 
-                <p class="texto">
-                    ¡Te esperamos para celebrar los 2 añitos de Amparo! 🎉
-                </p>
+caja.innerHTML = `
+<div class="gracias">
+    <div class="emoji">🐰💖</div>
 
-                <div class="corazon">💕</div>
-            </div>
-        `;
+    <h2>¡Gracias por confirmar!</h2>
+
+    <p>
+        <strong>${nombre}</strong>, tu asistencia quedó registrada.
+    </p>
+
+    <p class="texto">
+        ¡Los esperamos el <b>25 de julio</b><br>
+        para celebrar los <b>2 añitos de Amparo</b> 🎉
+    </p>
+
+    <div class="corazon">💕</div>
+</div>
+`;
 
     } catch (error) {
         boton.disabled = false;
