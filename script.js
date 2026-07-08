@@ -37,12 +37,12 @@ caja.innerHTML = `
     <h2>¡Gracias por confirmar!</h2>
 
     <p>
-        <strong>${nombre}</strong>, tu asistencia quedó registrada.
+        <strong>${nombre}</strong>, gracias por confirmar tu asistencia.
     </p>
 
     <p class="texto">
-        ¡Los esperamos el <b>25 de julio</b><br>
-        para celebrar los <b>2 añitos de Amparo</b> 🎉
+        ¡Te espero el <b>25 de julio</b><br>
+        para celebrar mis <b>2 añitos</b> 🎉
     </p>
 
     <div class="corazon">💕</div>
